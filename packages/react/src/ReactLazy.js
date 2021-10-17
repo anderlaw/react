@@ -11,6 +11,7 @@ import type {Wakeable, Thenable} from 'shared/ReactTypes';
 
 import {REACT_LAZY_TYPE} from 'shared/ReactSymbols';
 
+//四个状态：-1,0,1,2
 const Uninitialized = -1;
 const Pending = 0;
 const Resolved = 1;
@@ -51,6 +52,7 @@ export type LazyComponent<T, P> = {
 function lazyInitializer<T>(payload: Payload<T>): T {
   if (payload._status === Uninitialized) {
     const ctor = payload._result;
+    //thenable is a promise
     const thenable = ctor();
     // Transition to the next state.
     // This might throw either because it's missing or throws. If so, we treat it
@@ -130,6 +132,7 @@ export function lazy<T>(
   const lazyType: LazyComponent<T, Payload<T>> = {
     $$typeof: REACT_LAZY_TYPE,
     _payload: payload,
+    //把lazyInitializer放到元素属性里暴露出去
     _init: lazyInitializer,
   };
 

@@ -43,6 +43,8 @@ export function forwardRef<Props, ElementType: React$ElementType>(
     }
   }
 
+  //$$typeof
+  //render
   const elementType = {
     $$typeof: REACT_FORWARD_REF_TYPE,
     render,

@@ -25,6 +25,7 @@ export function memo<Props>(
   const elementType = {
     $$typeof: REACT_MEMO_TYPE,
     type,
+    //这里的compare应该用于比对
     compare: compare === undefined ? null : compare,
   };
   if (__DEV__) {

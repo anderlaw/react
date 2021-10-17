@@ -12,6 +12,7 @@ if (__DEV__) {
   Object.freeze(emptyObject);
 }
 
+//props,context,(refs为空对象，updater)
 /**
  * Base class helpers for the updating state of a component.
  */

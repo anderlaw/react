@@ -83,7 +83,6 @@ export type ReactPortal = {
 export type RefObject = {|
   current: any,
 |};
-
 export type ReactScope = {|
   $$typeof: Symbol | number,
 |};

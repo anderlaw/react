@@ -124,6 +124,7 @@ function warnIfStringRefCannotBeAutoConverted(config) {
   }
 }
 
+//内部创建react元素的工厂方法
 /**
  * Factory method to create a new React element. This no longer adheres to
  * the class pattern, so do not use new to call it. Also, instanceof check
@@ -556,6 +557,7 @@ export function cloneElement(element, config, children) {
   return ReactElement(element.type, key, ref, self, source, owner, props);
 }
 
+//react元素的校验
 /**
  * Verifies the object is a ReactElement.
  * See https://reactjs.org/docs/react-api.html#isvalidelement

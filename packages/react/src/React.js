@@ -6,9 +6,10 @@
  *
  * @flow
  */
-
+//17.0.3
 import ReactVersion from 'shared/ReactVersion';
 import {
+  //片段
   REACT_FRAGMENT_TYPE,
   REACT_DEBUG_TRACING_MODE_TYPE,
   REACT_PROFILER_TYPE,
@@ -16,8 +17,11 @@ import {
   REACT_SUSPENSE_TYPE,
   REACT_SUSPENSE_LIST_TYPE,
   REACT_LEGACY_HIDDEN_TYPE,
+  //离线
   REACT_OFFSCREEN_TYPE,
+  //域
   REACT_SCOPE_TYPE,
+  //缓存
   REACT_CACHE_TYPE,
 } from 'shared/ReactSymbols';
 
@@ -78,14 +82,18 @@ const Children = {
 };
 
 export {
+  //包含了几个工具函数
   Children,
   createMutableSource,
   createRef,
   Component,
   PureComponent,
   createContext,
+  //ref属性的转发HOC(接收一个render函数：(props,ref)=>React$Node),返回一个reactElement
   forwardRef,
+  //懒加载HOC
   lazy,
+  //缓存HOC
   memo,
   useCallback,
   useContext,
